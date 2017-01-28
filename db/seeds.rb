@@ -14,4 +14,5 @@
 # @user.destroy
 
 # @account = User.find("u1").accounts.find("ua1")
-# @account.destroy
+@account = Account.find("ua2")
+@account.destroy
