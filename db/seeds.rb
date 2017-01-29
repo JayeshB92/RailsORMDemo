@@ -13,6 +13,14 @@
 # @user = User.find("u1")
 # @user.destroy
 
-# @account = User.find("u1").accounts.find("ua1")
-@account = Account.find("ua2")
-@account.destroy
+# @account = User.find("u1").accounts.find("ua2")
+# @account.destroy
+
+# @club = Club.create(club_id: "c1", club_name: "Club One")
+# @club.users << @user
+#
+# @club = Club.create(club_id: "c2", club_name: "Club Two")
+# @user.clubs << @club
+
+@club = Club.find("c2")
+@club.destroy
