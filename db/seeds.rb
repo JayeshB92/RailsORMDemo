@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 # @user = User.create(user_id: "u1", name: "Osho")
 # @account = @user.accounts.create(account_id: "ua1", amount: "1000.01")
 # @account = @user.accounts.create(account_id: "ua2", amount: "1000.02")
@@ -22,5 +14,27 @@
 # @club = Club.create(club_id: "c2", club_name: "Club Two")
 # @user.clubs << @club
 
-@club = Club.find("c2")
-@club.destroy
+# @club = Club.find("c2")
+# @club.destroy
+
+# @user = User.new(user_id: "eu2", name: "Jay")
+# @employee = @user.build_employee(designation: "Developer", salary: 20000.0)
+# @user.save
+
+# @employee = Employee.new(designation: "Developer", salary: 20000.0)
+# @user = @employee.build_user(user_id: "eu3", name: "Osho")
+# @employee.save
+
+# @user = User.new(user_id: "cu1", name: "Mayur")
+# @customer = @user.build_customer(contact_number: 8888888888)
+# @user.save
+
+# @customer = Customer.new(contact_number: 9999998888)
+# @user = @customer.build_user(user_id: "cu2", name: "Meet")
+# @customer.save
+
+# @employee = Employee.find("eu1")
+# @employee.pictures << Picture.new(picture_id: "p1", picture_name: "employee_1_profile.jpg")
+
+@customer = Customer.find("cu1")
+@customer.pictures << Picture.new(picture_id: "p2", picture_name: "customer_1_profile.jpg")

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170129051156) do
+ActiveRecord::Schema.define(version: 20170131080821) do
 
   create_table "accounts", primary_key: "account_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.decimal  "amount",     precision: 12, scale: 2, default: "0.0", null: false
@@ -35,6 +35,28 @@ ActiveRecord::Schema.define(version: 20170129051156) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "customers", primary_key: "customer_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint   "contact_number", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "employees", primary_key: "employee_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "designation",                                          null: false
+    t.decimal  "salary",      precision: 12, scale: 2, default: "0.0", null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+  end
+
+  create_table "pictures", primary_key: "picture_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "picture_name", null: false
+    t.string   "image_id",     null: false
+    t.string   "image_type",   null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["image_id"], name: "fk_rails_b8eccdc481", using: :btree
+  end
+
   create_table "users", primary_key: "user_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
     t.datetime "created_at", null: false
@@ -44,4 +66,7 @@ ActiveRecord::Schema.define(version: 20170129051156) do
   add_foreign_key "accounts", "users", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "club_members", "clubs", primary_key: "club_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "club_members", "users", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "customers", "users", column: "customer_id", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "employees", "users", column: "employee_id", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "pictures", "users", column: "image_id", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
 end
