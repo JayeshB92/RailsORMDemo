@@ -1,0 +1,29 @@
+<h1>Employee Details</h1>
+
+<%=form_tag({controller: 'home', action: 'create'}, method: 'post') do %>
+<table>
+    <tr>
+        <td align='right'><%= label_tag("ID:") %></td>
+        <td><%= text_field(:user, :user_id)%></td>
+    </tr>
+
+    <tr>
+        <td align='right'><%= label_tag("Name:") %></td>
+        <td><%= text_field(:user, :name)%></td>
+    </tr>
+
+    <tr>
+        <td align='right'><%= label_tag("Designation:") %></td>
+        <td><%= text_field(:employee, :designation)%></td>
+    </tr>
+
+    <tr>
+        <td align='right'><%= label_tag("Salary:") %></td>
+        <td><%= number_field(:employee, :salary)%></td>
+    </tr>
+
+    <tr>
+        <td colspan='2' align='right'><%= submit_tag("Submit") %></td>
+    </tr>
+</table>
+<%end%>
