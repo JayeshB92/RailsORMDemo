@@ -33,8 +33,8 @@
 # @user = @customer.build_user(user_id: "cu2", name: "Meet")
 # @customer.save
 
-# @employee = Employee.find("eu1")
-# @employee.pictures << Picture.new(picture_id: "p1", picture_name: "employee_1_profile.jpg")
+# @employee = Employee.find("eu3")
+# @employee.pictures << Picture.new(picture_id: "p1", picture_name: "employee_3_profile.jpg")
 
-@customer = Customer.find("cu1")
-@customer.pictures << Picture.new(picture_id: "p2", picture_name: "customer_1_profile.jpg")
+@customer = Customer.find("cu2")
+@customer.pictures << Picture.new(picture_id: "p2", picture_name: "customer_2_profile.jpg")

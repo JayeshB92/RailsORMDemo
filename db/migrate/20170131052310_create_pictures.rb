@@ -5,6 +5,7 @@ class CreatePictures < ActiveRecord::Migration[5.0]
       t.string :picture_name, null: false
       t.string :image_id, null: false
       t.string :image_type, null: false
+      # t.references :image, polymorphic: true
 
       t.timestamps
     end

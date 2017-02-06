@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20170131080821) do
     t.string   "image_type",   null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.index ["image_id"], name: "fk_rails_b8eccdc481", using: :btree
   end
 
   create_table "users", primary_key: "user_id", id: :string, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,5 +67,4 @@ ActiveRecord::Schema.define(version: 20170131080821) do
   add_foreign_key "club_members", "users", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "customers", "users", column: "customer_id", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
   add_foreign_key "employees", "users", column: "employee_id", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "pictures", "users", column: "image_id", primary_key: "user_id", on_update: :cascade, on_delete: :cascade
 end
